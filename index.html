@@ -1,0 +1,65 @@
+<!doctype html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>弹窗组件</title> 
+    <link rel="stylesheet" type="text/css" href="style/common.css">
+</head>
+<body>
+    <div class="common_btn" id="one">弹窗一个loading框</div>
+    <div class="common_btn" id="two">弹窗一个提示框</div>
+    <div class="common_btn" id="three">弹窗一个报错框</div>
+    <div class="common_btn" id="four">弹窗一个成功框</div>
+
+
+    <!-- <div class="mask_bg">
+        <div class="win_popbox">
+            <div class="header error"></div>
+            <div class="content">提示信息！</div>
+            <div class="footer">
+                <a href="javascript:;" class="cancle">取消</a>
+                <a href="javascript:;" class="ok">确认</a>
+                <a href="javascript:;" class="remove">删除</a>
+            </div>
+        </div>
+    </div> -->
+    
+    <script type="text/javascript" src="js/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="js/dialogComment.js"></script>
+    <script type="text/javascript">
+        $('#one').bind('click',function(){
+            $.dialog({
+                    type:'success',
+                    content:'提示内容',
+                    delay:0,
+                    buttons:[
+                        {
+                            type:'ok',
+                            text:'确定',
+                            callback:function(){
+                                return true
+                            }
+                        },
+                        {
+                            type:'cancle',
+                            text:'取消',
+                            callback:function(){
+                                return false
+                            }
+                        },
+                        {
+                            type:'remove',
+                            text:'删除',
+                            callback:function(){
+                                return true
+                            }
+                        }
+                    ],
+                    mask:.5,
+                    width:'auto',
+                    height:'auto'
+                });
+        });
+    </script>
+</body>
+</html>
